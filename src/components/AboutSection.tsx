@@ -18,7 +18,7 @@ const AboutSection = () => {
               <div className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-accent/30 card-elevated">
                 <img
                   src={profilePhoto}
-                  alt="Foto Profil Ahmad Fauzan"
+                  alt="Foto Profil Lutfi Darmawan"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -35,7 +35,7 @@ const AboutSection = () => {
               Mengenal Lebih Dekat
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Saya Ahmad Fauzan, mahasiswa Teknologi Informasi semester 6 yang memiliki passion kuat dalam pengembangan web dan desain antarmuka pengguna. Saya percaya bahwa teknologi dapat menjadi jembatan untuk menciptakan solusi yang berdampak positif.
+              Saya Lutfi Darmawan, mahasiswa Sistem Informasi semester 2 yang memiliki passion kuat dalam pengembangan web dan desain antarmuka pengguna. Saya percaya bahwa teknologi dapat menjadi jembatan untuk menciptakan solusi yang berdampak positif.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Tujuan karier saya adalah menjadi seorang Full-Stack Developer profesional yang mampu membangun aplikasi web modern dan scalable. Saya terus belajar dan mengembangkan keterampilan melalui proyek-proyek nyata.

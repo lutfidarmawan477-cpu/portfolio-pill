@@ -1,10 +1,11 @@
-import { Github, Linkedin, Mail, Instagram } from "lucide-react";
+import { Github, Mail, Instagram } from "lucide-react";
+import { Music2 } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/ahmadfauzan", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/ahmadfauzan", label: "LinkedIn" },
-  { icon: Instagram, href: "https://instagram.com/ahmadfauzan", label: "Instagram" },
-  { icon: Mail, href: "mailto:ahmad.fauzan@email.com", label: "Email" },
+  { icon: Github, href: "https://github.com/lutfidarmawan477", label: "GitHub" },
+  { icon: Music2, href: "https://tiktok.com/@pilllll_23", label: "TikTok" },
+  { icon: Instagram, href: "https://instagram.com/pill_23", label: "Instagram" },
+  { icon: Mail, href: "mailto:lutfidarmawan477@gmail.com", label: "Email" },
 ];
 
 const Footer = () => {
@@ -26,7 +27,7 @@ const Footer = () => {
           ))}
         </div>
         <p className="text-primary-foreground/50 text-sm">
-          © {new Date().getFullYear()} Ahmad Fauzan. All rights reserved.
+          © {new Date().getFullYear()} Lutfi Darmawan. All rights reserved.
         </p>
       </div>
     </footer>
