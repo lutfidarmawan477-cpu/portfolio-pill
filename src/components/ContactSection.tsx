@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin, Send } from "lucide-react";
+import { Mail, Instagram, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -86,24 +86,24 @@ const ContactSection = () => {
             </p>
             <div className="space-y-4">
               <a
-                href="mailto:ahmad.fauzan@email.com"
+                href="mailto:lutfidarmawan477@gmail.com"
                 className="flex items-center gap-3 text-foreground hover:text-accent transition-colors group"
               >
                 <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
                   <Mail size={18} className="text-accent" />
                 </div>
-                ahmad.fauzan@email.com
+                lutfidarmawan477@gmail.com
               </a>
               <a
-                href="https://linkedin.com/in/ahmadfauzan"
+                href="https://instagram.com/pilll23"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 text-foreground hover:text-accent transition-colors group"
               >
                 <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                  <Linkedin size={18} className="text-accent" />
+                  <Instagram size={18} className="text-accent" />
                 </div>
-                linkedin.com/in/ahmadfauzan
+                @pilll23
               </a>
             </div>
           </motion.div>

@@ -32,9 +32,9 @@ const HeroSection = () => {
           transition={{ delay: 0.4 }}
           className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-primary-foreground leading-tight mb-6"
         >
-          Ahmad Fauzan
+          Lutfi Darmawan
           <br />
-          <span className="text-gradient">Mahasiswa IT</span>
+          <span className="text-gradient">Mahasiswa SI</span>
         </motion.h1>
 
         <motion.p
