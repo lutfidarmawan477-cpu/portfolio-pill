@@ -1,7 +1,7 @@
 import { Phone, Mail, Instagram, Linkedin } from "lucide-react";
 
 const socialLinks = [
-  { icon: Phone, href: "https://wa.me/6208989110355", label: "WhatsApp" },
+  { icon: Phone, href: "https://wa.me/628989110355", label: "WhatsApp" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/lutfi-darmawan-886ba33b3?utm_source=share&utm_content=profile&utm_medium=member_android", label: "LinkedIn" },
   { icon: Instagram, href: "https://instagram.com/pilll_23", label: "Instagram" },
   { icon: Mail, href: "mailto:lutfidarmawan477@gmail.com", label: "Email" },

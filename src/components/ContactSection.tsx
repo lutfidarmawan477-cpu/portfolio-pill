@@ -12,9 +12,8 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const waNumber = "6208989110355";
     const text = `Halo, saya ${form.name} (${form.email}).%0A%0A${form.message}`;
-    window.open(`https://wa.me/${waNumber}?text=${text}`, "_blank");
+    window.open(`https://wa.me/628989110355?text=${text}`, "_blank");
     toast({
       title: "Pesan Dikirim!",
       description: "Anda akan diarahkan ke WhatsApp.",
@@ -96,7 +95,7 @@ const ContactSection = () => {
                 lutfidarmawan477@gmail.com
               </a>
               <a
-                href="https://wa.me/6208989110355"
+                href="https://wa.me/628989110355"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 text-foreground hover:text-accent transition-colors group"
