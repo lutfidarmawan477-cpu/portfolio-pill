@@ -63,7 +63,10 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           className={`md:hidden p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setMobileOpen(!mobileOpen);
+          }}
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -83,7 +86,10 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <button
-                    onClick={() => handleNavClick(link.href)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleNavClick(link.href);
+                    }}
                     className="text-foreground text-base font-medium hover:text-accent transition-colors"
                   >
                     {link.label}

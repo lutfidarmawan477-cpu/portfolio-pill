@@ -10,7 +10,7 @@ const programmingSkills = [
   { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
 ];
 
-const tools = ["Git", "GitHub", "VS Code", "Postman", "Borland C++"];
+const tools = ["Git", "GitHub", "VS Code", "Borland C++"];
 
 const SkillsSection = () => {
   return (
