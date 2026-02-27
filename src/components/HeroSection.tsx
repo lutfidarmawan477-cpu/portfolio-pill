@@ -1,70 +1,137 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
+import { useState, useEffect } from "react";
+import heroPhoto from "@/assets/hero-photo.jpeg";
+
+const professions = ["Frontend Developer", "Backend Developer", "Mahasiswa SI"];
 
 const HeroSection = () => {
+  const [profIndex, setProfIndex] = useState(0);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const current = professions[profIndex];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (!isDeleting && text === current) {
+      timeout = setTimeout(() => setIsDeleting(true), 2000);
+    } else if (isDeleting && text === "") {
+      setIsDeleting(false);
+      setProfIndex((prev) => (prev + 1) % professions.length);
+    } else {
+      timeout = setTimeout(
+        () => {
+          setText(
+            isDeleting
+              ? current.substring(0, text.length - 1)
+              : current.substring(0, text.length + 1)
+          );
+        },
+        isDeleting ? 50 : 100
+      );
+    }
+
+    return () => clearTimeout(timeout);
+  }, [text, isDeleting, profIndex]);
+
   return (
     <section
       id="beranda"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Background image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <div className="absolute inset-0 hero-bg opacity-80" />
+      {/* Background */}
+      <div className="absolute inset-0 hero-bg" />
 
-      <div className="container mx-auto px-4 relative z-10 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-accent font-mono text-sm tracking-widest uppercase mb-4"
-        >
-          Selamat Datang di Portofolio Saya
-        </motion.p>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          {/* Left - Text */}
+          <div className="order-2 md:order-1 text-center md:text-left">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-primary-foreground/70 text-lg md:text-xl italic mb-2"
+            >
+              Hello, It's Me
+            </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-primary-foreground leading-tight mb-6"
-        >
-          Lutfi Darmawan
-          <br />
-          <span className="text-gradient">Mahasiswa SI</span>
-        </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-primary-foreground leading-tight mb-4"
+            >
+              Lutfi Darmawan
+            </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="text-primary-foreground/70 text-lg md:text-xl max-w-2xl mx-auto mb-10"
-        >
-          Passionate dalam pengembangan web & membangun solusi digital yang bermakna.
-        </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="text-xl md:text-2xl font-semibold text-primary-foreground mb-4"
+            >
+              And I'm a{" "}
+              <span className="text-gradient">
+                {text}
+                <span className="animate-pulse">|</span>
+              </span>
+            </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <Button variant="hero" size="lg" asChild>
-            <a href="#proyek">
-              <ArrowDown size={18} />
-              Lihat Proyek
-            </a>
-          </Button>
-          <Button variant="heroOutline" size="lg" asChild>
-            <a href="#kontak">
-              <Send size={18} />
-              Hubungi Saya
-            </a>
-          </Button>
-        </motion.div>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="text-primary-foreground/70 text-base md:text-lg max-w-lg mb-8 mx-auto md:mx-0"
+            >
+              Mahasiswa yang sedang terus belajar pembuatan dan pembangunan Website yang Interaktif dan Responsif.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            >
+              <Button variant="hero" size="lg" asChild>
+                <a href="#proyek">
+                  <ArrowDown size={18} />
+                  Lihat Proyek
+                </a>
+              </Button>
+              <Button variant="heroOutline" size="lg" asChild>
+                <a href="#kontak">
+                  <Send size={18} />
+                  Hubungi Saya
+                </a>
+              </Button>
+            </motion.div>
+          </div>
+
+          {/* Right - Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="order-1 md:order-2 flex justify-center"
+          >
+            <div className="relative">
+              {/* Hexagon glow */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full bg-accent/20 blur-3xl" />
+              </div>
+              {/* Photo */}
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-accent/50 shadow-[0_0_40px_hsl(185_80%_45%/0.3)]">
+                <img
+                  src={heroPhoto}
+                  alt="Lutfi Darmawan"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}

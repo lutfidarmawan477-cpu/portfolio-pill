@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import { Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 const AboutSection = () => {
@@ -32,18 +34,18 @@ const AboutSection = () => {
               Tentang Saya
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Mengenal Lebih Dekat
+              Hello!
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Saya Lutfi Darmawan, mahasiswa Sistem Informasi semester 2 yang memiliki passion kuat dalam pengembangan web dan desain antarmuka pengguna. Saya percaya bahwa teknologi dapat menjadi jembatan untuk menciptakan solusi yang berdampak positif.
+              Saya Lutfi Darmawan, mahasiswa STMIK JAKARTA Jurusan Sistem Informasi yang memiliki minat pada Pembuatan Website serta Pengembangan Website dan desain antarmuka pengguna. Saya yakin dengan adanya minat Saya pada ini, dapat berkembang dengan pesat dan baik.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Tujuan karier saya adalah menjadi seorang Full-Stack Developer profesional yang mampu membangun aplikasi web modern dan scalable. Saya terus belajar dan mengembangkan keterampilan melalui proyek-proyek nyata.
+              Tujuan karir saya adalah menjadi Full-Stack Developer profesional yang mampu membuat Website yang interaktif dan responsif bagi pengguna.
             </p>
-            <div className="flex gap-8">
+            <div className="flex gap-8 mb-8">
               {[
                 { value: "10+", label: "Proyek" },
-                { value: "2+", label: "Tahun Coding" },
+                { value: "1+", label: "Tahun Coding" },
                 { value: "5+", label: "Sertifikasi" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
@@ -52,6 +54,12 @@ const AboutSection = () => {
                 </div>
               ))}
             </div>
+            <Button asChild variant="default" size="lg">
+              <a href="/cv-lutfi-darmawan.jpeg" download="CV-Lutfi-Darmawan.jpeg">
+                <Download size={18} />
+                Download CV
+              </a>
+            </Button>
           </div>
         </motion.div>
       </div>

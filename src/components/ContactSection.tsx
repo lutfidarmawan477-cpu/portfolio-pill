@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Instagram, Send } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,9 +12,12 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const waNumber = "6208989110355";
+    const text = `Halo, saya ${form.name} (${form.email}).%0A%0A${form.message}`;
+    window.open(`https://wa.me/${waNumber}?text=${text}`, "_blank");
     toast({
-      title: "Pesan Terkirim!",
-      description: "Terima kasih telah menghubungi saya. Saya akan segera membalas.",
+      title: "Pesan Dikirim!",
+      description: "Anda akan diarahkan ke WhatsApp.",
     });
     setForm({ name: "", email: "", message: "" });
   };
@@ -37,7 +40,6 @@ const ContactSection = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          {/* Form */}
           <motion.form
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -74,7 +76,6 @@ const ContactSection = () => {
             </Button>
           </motion.form>
 
-          {/* Info */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -95,15 +96,15 @@ const ContactSection = () => {
                 lutfidarmawan477@gmail.com
               </a>
               <a
-                href="https://instagram.com/pilll23"
+                href="https://wa.me/6208989110355"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-3 text-foreground hover:text-accent transition-colors group"
               >
                 <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                  <Instagram size={18} className="text-accent" />
+                  <Phone size={18} className="text-accent" />
                 </div>
-                @pilll23
+                08989110355
               </a>
             </div>
           </motion.div>
