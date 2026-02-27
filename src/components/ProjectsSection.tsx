@@ -4,19 +4,19 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "E-Commerce Dashboard",
+    title: "Valentine Website",
     description:
-      "Dashboard admin untuk mengelola produk, pesanan, dan analitik penjualan dengan visualisasi data interaktif.",
-    tech: ["React", "Tailwind CSS", "Chart.js"],
-    demo: "#",
+      "Website khusus untuk hari Valentine yang membuat pasangan kita semakin berbunga-bunga.",
+    tech: ["HTML", "CSS"],
+    demo: "https://lutfidarmawan477-cpu.github.io/valentine/",
     github: "#",
   },
   {
-    title: "Task Management App",
+    title: "Konversi Suhu Celsius Website",
     description:
-      "Aplikasi manajemen tugas dengan fitur drag-and-drop, deadline reminder, dan kolaborasi tim real-time.",
-    tech: ["JavaScript", "Node.js", "MongoDB"],
-    demo: "#",
+      "Website yang membantu kita dalam mengkonversikan suhu dalam Celsius ke Fahrenheit, Reamur dan Kelvin.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    demo: "https://lutfidarmawan477-cpu.github.io/celsius/",
     github: "#",
   },
   {
@@ -43,7 +43,7 @@ const ProjectsSection = () => {
             Proyek
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Karya Terbaru Saya
+            Proyek Terbaru Saya
           </h2>
         </motion.div>
 
@@ -57,9 +57,7 @@ const ProjectsSection = () => {
               transition={{ delay: i * 0.15 }}
               className="group bg-card rounded-xl border border-border card-elevated overflow-hidden"
             >
-              {/* Color bar */}
               <div className="h-1.5 w-full bg-gradient-to-r from-accent to-accent/40" />
-
               <div className="p-7">
                 <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
                   {project.title}
@@ -67,7 +65,6 @@ const ProjectsSection = () => {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-5">
                   {project.description}
                 </p>
-
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tech.map((t) => (
                     <span
@@ -78,7 +75,6 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-
                 <div className="flex gap-3">
                   <Button size="sm" variant="default" asChild>
                     <a href={project.demo} target="_blank" rel="noreferrer">

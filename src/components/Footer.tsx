@@ -1,10 +1,9 @@
-import { Github, Mail, Instagram } from "lucide-react";
-import { Music2 } from "lucide-react";
+import { Phone, Mail, Instagram, Linkedin } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/lutfidarmawan477", label: "GitHub" },
-  { icon: Music2, href: "https://tiktok.com/@pilllll_23", label: "TikTok" },
-  { icon: Instagram, href: "https://instagram.com/pill_23", label: "Instagram" },
+  { icon: Phone, href: "https://wa.me/6208989110355", label: "WhatsApp" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/lutfi-darmawan-886ba33b3?utm_source=share&utm_content=profile&utm_medium=member_android", label: "LinkedIn" },
+  { icon: Instagram, href: "https://instagram.com/pilll_23", label: "Instagram" },
   { icon: Mail, href: "mailto:lutfidarmawan477@gmail.com", label: "Email" },
 ];
 

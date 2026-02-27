@@ -20,6 +20,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleNavClick = (href: string) => {
+    setMobileOpen(false);
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -31,9 +39,9 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <a href="#beranda" className="text-xl font-bold tracking-tight">
           <span className={scrolled ? "text-foreground" : "text-primary-foreground"}>
-            Port
+            Lutfi{" "}
           </span>
-          <span className="text-gradient">folio</span>
+          <span className="text-gradient">Darmawan</span>
         </a>
 
         {/* Desktop */}
@@ -74,13 +82,12 @@ const Navbar = () => {
             <ul className="flex flex-col items-center gap-4 py-6">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
+                  <button
+                    onClick={() => handleNavClick(link.href)}
                     className="text-foreground text-base font-medium hover:text-accent transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
