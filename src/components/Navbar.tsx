@@ -44,7 +44,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
         <a href="#beranda" className="text-xl font-bold tracking-tight">
-          <span className={scrolled ? "text-foreground" : "text-primary-foreground"}>
+          <span className={scrolled ? "text-foreground" : "text-white"}>
             Lutfi{" "}
           </span>
           <span className="text-gradient">Darmawan</span>
@@ -57,7 +57,7 @@ const Navbar = () => {
               <a
                 href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-accent ${
-                  scrolled ? "text-foreground" : "text-primary-foreground/80"
+                  scrolled ? "text-foreground" : "text-white/80"
                 }`}
               >
                 {link.label}
@@ -69,7 +69,7 @@ const Navbar = () => {
         <div className="flex items-center gap-2">
           {/* Dark mode toggle */}
           <button
-            className={`p-2 rounded-full transition-colors ${scrolled ? "text-foreground hover:bg-muted" : "text-primary-foreground hover:bg-primary-foreground/10"}`}
+            className={`p-2 rounded-full transition-colors ${scrolled ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10"}`}
             onClick={toggleDark}
             aria-label="Toggle dark mode"
           >
@@ -78,7 +78,7 @@ const Navbar = () => {
 
           {/* Mobile toggle */}
           <button
-            className={`md:hidden p-2 ${scrolled ? "text-foreground" : "text-primary-foreground"}`}
+            className={`md:hidden p-2 ${scrolled ? "text-foreground" : "text-white"}`}
             onClick={(e) => {
               e.stopPropagation();
               setMobileOpen(!mobileOpen);
