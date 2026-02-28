@@ -12,6 +12,7 @@ const Navbar = () => {
   const navLinks = [
     { label: t("nav_home"), href: "#beranda" },
     { label: t("nav_about"), href: "#tentang" },
+    { label: t("nav_certs"), href: "#sertifikat" },
     { label: t("nav_skills"), href: "#keahlian" },
     { label: t("nav_projects"), href: "#proyek" },
     { label: t("nav_contact"), href: "#kontak" },
@@ -49,11 +50,11 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <a href="#beranda" className="text-xl font-bold tracking-tight">
-          <span className={scrolled ? "text-foreground" : "text-white"}>
+        <a href="#beranda" className="text-xl tracking-tight" style={{ fontFamily: "'Poppins', sans-serif" }}>
+          <span className={`font-extrabold ${scrolled ? "text-foreground" : "text-white"}`}>
             Lutfi{" "}
           </span>
-          <span className="text-gradient">Darmawan</span>
+          <span className="text-gradient font-extrabold">Darmawan</span>
         </a>
 
         {/* Desktop */}
