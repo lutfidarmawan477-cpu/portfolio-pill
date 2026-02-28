@@ -52,7 +52,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-primary-foreground/70 text-lg md:text-xl italic mb-2"
+              className="text-white/70 text-lg md:text-xl italic mb-2"
             >
               Hello, It's Me
             </motion.p>
@@ -61,7 +61,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-primary-foreground leading-tight mb-4"
+              className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4"
             >
               Lutfi Darmawan
             </motion.h1>
@@ -70,7 +70,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="text-xl md:text-2xl font-semibold text-primary-foreground mb-4"
+              className="text-xl md:text-2xl font-semibold text-white mb-4"
             >
               And I'm a{" "}
               <span className="text-gradient">
@@ -83,7 +83,7 @@ const HeroSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="text-primary-foreground/70 text-base md:text-lg max-w-lg mb-8 mx-auto md:mx-0"
+              className="text-white/70 text-base md:text-lg max-w-lg mb-8 mx-auto md:mx-0"
             >
               Mahasiswa yang sedang terus belajar pembuatan dan pembangunan Website yang Interaktif dan Responsif.
             </motion.p>
@@ -140,7 +140,7 @@ const HeroSection = () => {
         transition={{ repeat: Infinity, duration: 2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
-        <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex justify-center pt-2">
+        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2">
           <div className="w-1.5 h-1.5 rounded-full bg-accent" />
         </div>
       </motion.div>
