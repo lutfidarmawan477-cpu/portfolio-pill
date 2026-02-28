@@ -62,6 +62,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4"
+              style={{ fontFamily: "'Poppins', sans-serif" }}
             >
               Lutfi Darmawan
             </motion.h1>

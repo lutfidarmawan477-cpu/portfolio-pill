@@ -8,7 +8,12 @@ const translations = {
   nav_about: { id: "Tentang", en: "About" },
   nav_skills: { id: "Keahlian", en: "Skills" },
   nav_projects: { id: "Proyek", en: "Projects" },
+  nav_certs: { id: "Sertifikat", en: "Certificates" },
   nav_contact: { id: "Kontak", en: "Contact" },
+
+  // Certificates
+  certs_label: { id: "Sertifikat", en: "Certificates" },
+  certs_title: { id: "Sertifikat Saya", en: "My Certificates" },
 
   // Hero
   hero_greeting: { id: "Hello, It's Me", en: "Hello, It's Me" },
