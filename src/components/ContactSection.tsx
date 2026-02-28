@@ -5,9 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -15,8 +17,8 @@ const ContactSection = () => {
     const text = `Halo, saya ${form.name} (${form.email}).%0A%0A${form.message}`;
     window.open(`https://wa.me/628989110355?text=${text}`, "_blank");
     toast({
-      title: "Pesan Dikirim!",
-      description: "Anda akan diarahkan ke WhatsApp.",
+      title: t("contact_toast_title"),
+      description: t("contact_toast_desc"),
     });
     setForm({ name: "", email: "", message: "" });
   };
@@ -31,10 +33,10 @@ const ContactSection = () => {
           className="text-center mb-16"
         >
           <p className="text-accent font-mono text-sm tracking-widest uppercase mb-2">
-            Kontak
+            {t("contact_label")}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Hubungi Saya
+            {t("contact_title")}
           </h2>
         </motion.div>
 
@@ -47,7 +49,7 @@ const ContactSection = () => {
             className="space-y-5"
           >
             <Input
-              placeholder="Nama Lengkap"
+              placeholder={t("contact_name")}
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               required
@@ -55,14 +57,14 @@ const ContactSection = () => {
             />
             <Input
               type="email"
-              placeholder="Email"
+              placeholder={t("contact_email")}
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               required
               className="bg-card"
             />
             <Textarea
-              placeholder="Tulis pesan Anda..."
+              placeholder={t("contact_message")}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               required
@@ -71,7 +73,7 @@ const ContactSection = () => {
             />
             <Button type="submit" className="w-full" size="lg">
               <Send size={16} />
-              Kirim Pesan
+              {t("contact_send")}
             </Button>
           </motion.form>
 
@@ -82,7 +84,7 @@ const ContactSection = () => {
             className="flex flex-col justify-center gap-6"
           >
             <p className="text-muted-foreground leading-relaxed">
-              Jangan ragu untuk menghubungi saya jika Anda memiliki pertanyaan, peluang kolaborasi, atau sekadar ingin berdiskusi tentang teknologi.
+              {t("contact_desc")}
             </p>
             <div className="space-y-4">
               <a

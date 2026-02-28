@@ -3,6 +3,7 @@ import { ArrowDown, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import heroPhoto from "@/assets/hero-photo.jpeg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const professions = ["Frontend Developer", "Backend Developer", "Mahasiswa SI"];
 
@@ -10,6 +11,7 @@ const HeroSection = () => {
   const [profIndex, setProfIndex] = useState(0);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const current = professions[profIndex];
@@ -41,12 +43,10 @@ const HeroSection = () => {
       id="beranda"
       className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Background */}
       <div className="absolute inset-0 hero-bg" />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
-          {/* Left - Text */}
           <div className="order-2 md:order-1 text-center md:text-left">
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -54,7 +54,7 @@ const HeroSection = () => {
               transition={{ delay: 0.2 }}
               className="text-white/70 text-lg md:text-xl italic mb-2"
             >
-              Hello, It's Me
+              {t("hero_greeting")}
             </motion.p>
 
             <motion.h1
@@ -72,7 +72,7 @@ const HeroSection = () => {
               transition={{ delay: 0.6 }}
               className="text-xl md:text-2xl font-semibold text-white mb-4"
             >
-              And I'm a{" "}
+              {t("hero_iam")}
               <span className="text-gradient">
                 {text}
                 <span className="animate-pulse">|</span>
@@ -85,7 +85,7 @@ const HeroSection = () => {
               transition={{ delay: 0.8 }}
               className="text-white/70 text-base md:text-lg max-w-lg mb-8 mx-auto md:mx-0"
             >
-              Mahasiswa yang sedang terus belajar pembuatan dan pembangunan Website yang Interaktif dan Responsif.
+              {t("hero_desc")}
             </motion.p>
 
             <motion.div
@@ -97,19 +97,18 @@ const HeroSection = () => {
               <Button variant="hero" size="lg" asChild>
                 <a href="#proyek">
                   <ArrowDown size={18} />
-                  Lihat Proyek
+                  {t("hero_projects")}
                 </a>
               </Button>
               <Button variant="heroOutline" size="lg" asChild>
                 <a href="#kontak">
                   <Send size={18} />
-                  Hubungi Saya
+                  {t("hero_contact")}
                 </a>
               </Button>
             </motion.div>
           </div>
 
-          {/* Right - Photo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -117,11 +116,9 @@ const HeroSection = () => {
             className="order-1 md:order-2 flex justify-center"
           >
             <div className="relative">
-              {/* Hexagon glow */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full bg-accent/20 blur-3xl" />
               </div>
-              {/* Photo */}
               <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-accent/50 shadow-[0_0_40px_hsl(185_80%_45%/0.3)]">
                 <img
                   src={heroPhoto}
@@ -134,7 +131,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}

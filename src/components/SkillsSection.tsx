@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Wrench } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const programmingSkills = [
   { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
@@ -13,6 +14,8 @@ const programmingSkills = [
 const tools = ["GitHub", "VS Code", "Borland C++", "NetBeans"];
 
 const SkillsSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="keahlian" className="py-24 bg-muted/50">
       <div className="container mx-auto px-4">
@@ -23,14 +26,13 @@ const SkillsSection = () => {
           className="text-center mb-16"
         >
           <p className="text-accent font-mono text-sm tracking-widest uppercase mb-2">
-            Keahlian
+            {t("skills_label")}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Skill's yang Saya Kuasai
+            {t("skills_title")}
           </h2>
         </motion.div>
 
-        {/* Programming Languages */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 max-w-5xl mx-auto mb-12">
           {programmingSkills.map((skill, i) => (
             <motion.div
@@ -47,7 +49,6 @@ const SkillsSection = () => {
           ))}
         </div>
 
-        {/* Tools */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
