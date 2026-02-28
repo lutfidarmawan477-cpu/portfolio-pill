@@ -1,19 +1,21 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { label: "Beranda", href: "#beranda" },
-  { label: "Tentang", href: "#tentang" },
-  { label: "Keahlian", href: "#keahlian" },
-  { label: "Proyek", href: "#proyek" },
-  { label: "Kontak", href: "#kontak" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dark, setDark] = useState(() => document.documentElement.classList.contains("dark"));
+  const { lang, setLang, t } = useLanguage();
+
+  const navLinks = [
+    { label: t("nav_home"), href: "#beranda" },
+    { label: t("nav_about"), href: "#tentang" },
+    { label: t("nav_skills"), href: "#keahlian" },
+    { label: t("nav_projects"), href: "#proyek" },
+    { label: t("nav_contact"), href: "#kontak" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -24,6 +26,10 @@ const Navbar = () => {
   const toggleDark = () => {
     document.documentElement.classList.toggle("dark");
     setDark(!dark);
+  };
+
+  const toggleLang = () => {
+    setLang(lang === "id" ? "en" : "id");
   };
 
   const handleNavClick = (href: string) => {
@@ -67,6 +73,18 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-2">
+          {/* Language toggle */}
+          <button
+            className={`p-2 rounded-full transition-colors flex items-center gap-1 text-xs font-semibold ${
+              scrolled ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10"
+            }`}
+            onClick={toggleLang}
+            aria-label="Toggle language"
+          >
+            <Globe size={18} />
+            <span>{lang === "id" ? "EN" : "ID"}</span>
+          </button>
+
           {/* Dark mode toggle */}
           <button
             className={`p-2 rounded-full transition-colors ${scrolled ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10"}`}

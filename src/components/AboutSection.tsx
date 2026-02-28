@@ -2,8 +2,11 @@ import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const AboutSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="tentang" className="py-24 bg-background">
       <div className="container mx-auto px-4">
@@ -14,7 +17,6 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="grid md:grid-cols-2 gap-12 items-center max-w-5xl mx-auto"
         >
-          {/* Photo */}
           <div className="flex justify-center">
             <div className="relative">
               <div className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-accent/30 card-elevated">
@@ -28,25 +30,24 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Text */}
           <div>
             <p className="text-accent font-mono text-sm tracking-widest uppercase mb-2">
-              Tentang Saya
+              {t("about_label")}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Hello!
+              {t("about_title")}
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              Saya Lutfi Darmawan, mahasiswa STMIK JAKARTA Jurusan Sistem Informasi yang memiliki minat pada Pembuatan Website serta Pengembangan Website dan desain antarmuka pengguna. Saya yakin dengan adanya minat Saya pada ini, dapat berkembang dengan pesat dan baik.
+              {t("about_p1")}
             </p>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Tujuan karir saya adalah menjadi Full-Stack Developer profesional yang mampu membuat Website yang interaktif dan responsif bagi pengguna.
+              {t("about_p2")}
             </p>
             <div className="flex gap-8 mb-8">
               {[
-                { value: "10+", label: "Proyek" },
-                { value: "1+", label: "Tahun Coding" },
-                { value: "5+", label: "Sertifikasi" },
+                { value: "10+", label: t("about_projects") },
+                { value: "1+", label: t("about_years") },
+                { value: "5+", label: t("about_certs") },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <p className="text-2xl font-bold text-gradient">{stat.value}</p>
@@ -57,7 +58,7 @@ const AboutSection = () => {
             <Button asChild variant="default" size="lg">
               <a href="/cv-lutfi-darmawan.jpeg" download="CV-Lutfi-Darmawan.jpeg">
                 <Download size={18} />
-                Download CV
+                {t("about_download")}
               </a>
             </Button>
           </div>

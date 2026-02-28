@@ -1,4 +1,5 @@
 import { Phone, Mail, Instagram, Linkedin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const socialLinks = [
   { icon: Phone, href: "https://wa.me/628989110355", label: "WhatsApp" },
@@ -8,6 +9,8 @@ const socialLinks = [
 ];
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-primary py-10">
       <div className="container mx-auto px-4 flex flex-col items-center gap-6">
@@ -26,7 +29,7 @@ const Footer = () => {
           ))}
         </div>
         <p className="text-primary-foreground/50 text-sm">
-          © {new Date().getFullYear()} Lutfi Darmawan. All rights reserved.
+          © {new Date().getFullYear()} Lutfi Darmawan. {t("footer_rights")}
         </p>
       </div>
     </footer>
