@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
@@ -9,6 +9,7 @@ const projects = [
       "Website khusus untuk hari Valentine yang membuat pasangan kita semakin berbunga-bunga.",
     tech: ["HTML", "CSS"],
     demo: "https://lutfidarmawan477-cpu.github.io/valentine/",
+    github: "https://github.com/lutfidarmawan477-cpu/valentine.git",
   },
   {
     title: "Konversi Suhu Celsius Website",
@@ -16,6 +17,7 @@ const projects = [
       "Website yang membantu kita dalam mengkonversikan suhu dalam Celsius ke Fahrenheit, Reamur dan Kelvin.",
     tech: ["HTML", "CSS", "JavaScript"],
     demo: "https://lutfidarmawan477-cpu.github.io/celsius/",
+    github: "https://github.com/lutfidarmawan477-cpu/celsius.git",
   },
   {
     title: "Portfolio Website",
@@ -23,6 +25,7 @@ const projects = [
       "Website portofolio responsif dengan animasi halus dan desain modern untuk menampilkan karya profesional.",
     tech: ["React", "Framer Motion", "Tailwind"],
     demo: "#",
+    github: "https://github.com/lutfidarmawan477-cpu/portfolio-pill.git",
   },
 ];
 
@@ -77,6 +80,12 @@ const ProjectsSection = () => {
                     <a href={project.demo} target="_blank" rel="noreferrer">
                       <ExternalLink size={16} />
                       Demo
+                    </a>
+                  </Button>
+                  <Button size="default" variant="outline" asChild>
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      <Github size={16} />
+                      GitHub
                     </a>
                   </Button>
                 </div>
